@@ -4,5 +4,4 @@
 cd ~/kadai4
 git add .
 git commit -m "Add gcd and test scripts"
-git push -u origin master
-
+git push -u origin main
