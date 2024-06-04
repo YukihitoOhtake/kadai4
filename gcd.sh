@@ -19,7 +19,7 @@ if [ $# -ne 2 ]; then
 fi
 
 # 引数が自然数かどうかを確認
-if ! [[ $1 =~ ^[0-9]+$ ]] || ! [[ $2 =~ ^[0-9]+$ ]]; then
+if ! [[ $1 =~ ^[1-9][0-9]*$ ]] || ! [[ $2 =~ ^[1-9][0-9]*$ ]]; then
     echo "Error: Both arguments must be natural numbers."
     exit 1
 fi
