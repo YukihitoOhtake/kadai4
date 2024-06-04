@@ -26,7 +26,7 @@ test_gcd 48 18 6
 test_gcd 81 27 27
 test_gcd 56 98 14
 test_gcd 120 140 20
-test_gcd 99 121 1
+test_gcd 99 121 11  
 test_gcd 36 60 12
 test_gcd 77 22 11
 test_gcd 49 7 7
