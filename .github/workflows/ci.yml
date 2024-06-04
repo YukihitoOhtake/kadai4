@@ -1,0 +1,22 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up SSH
+      run: sudo apt-get update && sudo apt-get install -y openssh-client
+
+    - name: Make gcd.sh executable
+      run: chmod +x gcd.sh
+
+    - name: Make test_gcd.sh executable
+      run: chmod +x test_gcd.sh
+
+    - name: Run tests
+      run: ./test_gcd.sh
