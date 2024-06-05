@@ -14,13 +14,13 @@ gcd() {
 
 # 引数の数を確認
 if [ $# -ne 2 ]; then
-    echo "Usage: $0 num1 num2"
+    echo "使い方: $0 数字1 数字2"
     exit 1
 fi
 
 # 引数が自然数かどうかを確認
 if ! [[ $1 =~ ^[1-9][0-9]*$ ]] || ! [[ $2 =~ ^[1-9][0-9]*$ ]]; then
-    echo "Error: Both arguments must be natural numbers."
+    echo "エラー: 引数は両方とも正の整数を入力してください。"
     exit 1
 fi
 
