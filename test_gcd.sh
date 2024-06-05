@@ -71,25 +71,25 @@ fi
 
 # 引数が小数の場合
 if ./gcd.sh 10 5.5 > /dev/null 2>&1; then
-    echo "Test failed: expected error for decimal number"
+    echo "テスト失敗: 小数の引数ではエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: decimal number test"
+    echo "テスト成功: 小数の引数のテストが通りました"
 fi
 
 if ./gcd.sh 5.5 10 > /dev/null 2>&1; then
-    echo "Test failed: expected error for decimal number"
+    echo "テスト失敗: 小数の引数ではエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: decimal number test"
+    echo "テスト成功: 小数の引数のテストが通りました"
 fi
 
 # 引数が多すぎる場合
 if ./gcd.sh 10 5 3 > /dev/null 2>&1; then
-    echo "Test failed: expected error for too many arguments"
+    echo "テスト失敗: 引数が多すぎる場合はエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: too many arguments test"
+    echo "テスト成功: 引数が多すぎる場合のテストが通りました"
 fi
 
-echo "All tests passed."
+echo "すべてのテストが成功しました。"
