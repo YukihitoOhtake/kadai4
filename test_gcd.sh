@@ -5,9 +5,9 @@ test_gcd() {
     local result
     result=$(./gcd.sh $1 $2 2>/dev/null)
     if [ "$result" -eq "$3" ]; then
-        echo "Test passed: gcd($1, $2) == $3"
+        echo "テスト成功: gcd($1, $2) == $3"
     else
-        echo "Test failed: gcd($1, $2) == $result, expected $3"
+        echo "テスト失敗: gcd($1, $2) == $result, 期待される結果は $3"
         exit 1
     fi
 }
@@ -40,53 +40,53 @@ test_gcd 50 75 25
 # 異常テストケース
 # 引数が1つの場合
 if ./gcd.sh 3 > /dev/null 2>&1; then
-    echo "Test failed: expected error for single argument"
+    echo "テスト失敗: 引数が1つの場合にエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: single argument test"
+    echo "テスト成功: 引数が1つの場合のテストが通りました"
 fi
 
 # 引数が文字の場合
 if ./gcd.sh 10 "abc" > /dev/null 2>&1; then
-    echo "Test failed: expected error for non-numeric argument"
+    echo "テスト失敗: 引数が文字の場合にエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: non-numeric argument test"
+    echo "テスト成功: 引数が文字の場合のテストが通りました"
 fi
 
 # 引数が負の数の場合
 if ./gcd.sh -10 5 > /dev/null 2>&1; then
-    echo "Test failed: expected error for negative number"
+    echo "テスト失敗: 引数が負の数の場合にエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: negative number test"
+    echo "テスト成功: 引数が負の数の場合のテストが通りました"
 fi
 
 if ./gcd.sh 10 -5 > /dev/null 2>&1; then
-    echo "Test failed: expected error for negative number"
+    echo "テスト失敗: 引数が負の数の場合にエラーが発生するはずです"
     exit 1
 else
-    echo "Test passed: negative number test"
+    echo "テスト成功: 引数が負の数の場合のテストが通りました"
 fi
 
 # 引数が小数の場合
 if ./gcd.sh 10 5.5 > /dev/null 2>&1; then
-    echo "テスト失敗: 小数の引数ではエラーが発生するはずです"
+    echo "テスト失敗: 引数が小数の場合にエラーが発生するはずです"
     exit 1
 else
-    echo "テスト成功: 小数の引数のテストが通りました"
+    echo "テスト成功: 引数が小数の場合のテストが通りました"
 fi
 
 if ./gcd.sh 5.5 10 > /dev/null 2>&1; then
-    echo "テスト失敗: 小数の引数ではエラーが発生するはずです"
+    echo "テスト失敗: 引数が小数の場合にエラーが発生するはずです"
     exit 1
 else
-    echo "テスト成功: 小数の引数のテストが通りました"
+    echo "テスト成功: 引数が小数の場合のテストが通りました"
 fi
 
 # 引数が多すぎる場合
 if ./gcd.sh 10 5 3 > /dev/null 2>&1; then
-    echo "テスト失敗: 引数が多すぎる場合はエラーが発生するはずです"
+    echo "テスト失敗: 引数が多すぎる場合にエラーが発生するはずです"
     exit 1
 else
     echo "テスト成功: 引数が多すぎる場合のテストが通りました"
